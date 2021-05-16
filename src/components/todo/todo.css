@@ -1,0 +1,113 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.todo-details {
+  display: flex;
+  flex-direction: column;
+}
+.todo-details header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+}
+.todo-details .item {
+  flex: 1;
+  padding: 1em;
+}
+.todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 2em;
+}
+.todo form {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2em;
+}
+.todo form label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+.todo ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.todo ul li {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 0.75em;
+  margin: 0.75em 0.5em;
+}
+.todo ul li.complete-true span {
+  background: pink;
+  text-decoration: line-through;
+}
+.todo ul li.complete-true span:hover {
+  background: seagreen;
+}
+.todo ul li span {
+  background: #e0e0e0;
+  cursor: pointer;
+}
+.todo ul li span:hover {
+  background: pink;
+}
+.todo ul li span,
+.todo ul li input {
+  border: 0.5px solid #eee;
+  display: inline-block;
+  padding: 0.2em 0.25em;
+  width: 300px;
+}
+
+.listColor {
+  height: 42px;
+  margin-right: 5px;
+  font-size: 17px;
+  border-radius: 4px;
+}
+li {
+  margin: 50px;
+}
+.updated {
+  border: 1px solid rgb(156, 156, 156);
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgb(192, 192, 192);
+}
+.updateForm {
+  border-radius: 5px;
+  /* border: 1px solid rgb(156, 156, 156); */
+  margin-left: 2em;
+}
+header {
+  background-color: rgb(144, 144, 144);
+  padding: 12px;
+}
+.formAdd {
+  border: 1px solid rgb(172, 172, 172);
+  padding: 20px;
+  border-radius: 10px;
+  margin-right: 50px;
+}
+/* .todo ul li button {
+  background: transparent;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 0.75em;
+} */
+
+/* button {
+  margin: 10px;
+} */
