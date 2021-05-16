@@ -33,15 +33,7 @@
       "last 1 safari version"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/IbrahimAljabr/todol.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/IbrahimAljabr/todol/issues"
-  },
-  "homepage": "https://github.com/IbrahimAljabr/todol#readme",
   "description": ""
 }
