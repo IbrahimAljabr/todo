@@ -5,14 +5,14 @@ import Badge from "react-bootstrap/Badge";
 function TodoList(props) {
   return (
     <section className="bigS">
-      <Toast className="oot">
-        {props.list.map((item) => (
+      {props.list.map((item) => (
+        <Toast onClose={() => props.handleDelete(item)}>
           <div className="list--boot" key={item._id + "_"}>
             <Toast.Header>
               <Badge
                 className="badgeN"
                 variant={item.complete ? "danger" : "success"}
-                onClick={() => props.handleComplete(item._id)}
+                onClick={() => props.handleComplete(item)}
               >
                 {item.complete ? "Complete" : "pending"}
               </Badge>
@@ -29,8 +29,8 @@ function TodoList(props) {
               </span>
             </Toast.Body>
           </div>
-        ))}
-      </Toast>
+        </Toast>
+      ))}
     </section>
   );
 }

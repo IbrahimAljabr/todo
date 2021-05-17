@@ -1,28 +1,33 @@
 import React from "react";
-import { useState } from "react";
 import Button from "react-bootstrap/Button";
+import useForm from "../hooks/form";
+import Form from "react-bootstrap/Form";
 
 function TodoForm(props) {
-  const [item, setItem] = useState("");
+  const [inputChange, formHandleSubmit] = useForm(props.handleSubmit);
 
-  const handleInputChange = (e) => {
-    setItem({ ...item, [e.target.name]: e.target.value });
-  };
+  // const handleInputChange = (e) => {
+  //   setItem({ ...item, [e.target.name]: e.target.value });
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    e.target.reset();
-    props.handleSubmit(item);
-    setItem(item);
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   e.target.reset();
+  //   props.handleSubmit(item);
+  //   setItem(item);
+  // };
 
   return (
     <>
       <h3>Add Item</h3>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={formHandleSubmit}>
         <label>
           <span>To Do Item</span>
-          <input name="text" placeholder="Add To Do List Item" onChange={handleInputChange} />
+          <input name="text" placeholder="Add To Do List Item" onChange={inputChange} />
+        </label>
+        <label>
+          <span>Assigned To</span>
+          <input type="text" name="assignee" placeholder="Assigned To" onChange={inputChange} />
         </label>
         <label>
           <span>Difficulty Rating</span>
@@ -32,20 +37,12 @@ function TodoForm(props) {
             min="1"
             max="5"
             name="difficulty"
-            onChange={handleInputChange}
+            onChange={inputChange}
           />
         </label>
-        <label>
-          <span>Assigned To</span>
-          <input
-            type="text"
-            name="assignee"
-            placeholder="Assigned To"
-            onChange={handleInputChange}
-          />
-        </label>
+
         <Button type="submit">Add Item</Button>
-      </form>
+      </Form>
     </>
   );
 }

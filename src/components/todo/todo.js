@@ -1,23 +1,20 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import TodoForm from "./form.js";
-import UpdateForm from "./updateform";
-import TodoList from "./list.js";
-// import "./todo.css";
+import ToDoC from "./todo-connected";
 
 function ToDo() {
   const [list, setList] = useState([]);
-  // const [update, setUpdate] = useState("");
+
   const [open, setOpen] = useState(false);
 
-  const addItem = (item) => {
-    if (typeof item === "object") {
-      console.log("🚀🚀🚀 ~~~~ addItem ~~~~ item", typeof item);
-      item._id = Math.random();
-      item.complete = false;
-      setList([...list, item]);
-    }
-  };
+  // const addItem = (item) => {
+  //   if (typeof item === "object") {
+  //     console.log("🚀🚀🚀 ~~~~ addItem ~~~~ item", typeof item);
+  //     item._id = Math.random();
+  //     item.complete = false;
+  //     setList([...list, item]);
+  //   }
+  // };
 
   const toggleComplete = (id) => {
     let item = list.filter((i) => i._id === id)[0] || {};
@@ -102,33 +99,17 @@ function ToDo() {
   //   setList(list);
   // }, []);
 
-  useEffect(() => {
-    document.title = `To Do List : complete ${
-      list.filter((item) => item.complete).length
-    } / incomplete ${list.filter((item) => !item.complete).length}`;
-  });
+  // useEffect(() => {
+  //   document.title = `To do complete ${list.filter((item) => item.complete).length} / incomplete ${
+  //     list.filter((item) => !item.complete).length
+  //   }`;
+  // });
 
   return (
     <>
-      <header>
-        <h2>There are {list.filter((item) => !item.complete).length} Items To Complete</h2>
-      </header>
-
       <section className="todo">
-        <div className="formAdd">
-          <TodoForm handleSubmit={addItem} />
-        </div>
-
         <div>
-          <TodoList
-            list={list}
-            handleComplete={toggleComplete}
-            // handleDelete={handleDelete}
-            // handleUpdate={handleUpdate}
-          />
-        </div>
-        <div className="updateForm">
-          <UpdateForm data={open} update={list} />
+          <ToDoC list={list} handleComplete={toggleComplete} />
         </div>
       </section>
     </>
