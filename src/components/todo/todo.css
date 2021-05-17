@@ -93,21 +93,40 @@ header {
   background-color: rgb(144, 144, 144);
   padding: 12px;
 }
+.badgeN {
+  width: 180px;
+}
+.toast-header strong {
+  padding: 5px 20px;
+}
+.list--boot {
+  margin-bottom: 20px;
+  background-color: rgb(245, 243, 243);
+  border-radius: 5px;
+}
+.oot {
+  height: 0px;
+}
 .formAdd {
+  height: 380px;
   border: 1px solid rgb(172, 172, 172);
   padding: 20px;
   border-radius: 10px;
   margin-right: 50px;
 }
+.bigS {
+  height: 800px;
+  overflow: auto;
+  width: 375px;
+}
 /* .todo ul li button {
   background: transparent;
   border: none;
-  color: blue;
   cursor: pointer;
   padding: 0;
   margin: 0 0.75em;
 } */
 
 /* button {
-  margin: 10px;
+  margin: 100px;
 } */
