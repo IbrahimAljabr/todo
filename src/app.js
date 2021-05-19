@@ -3,12 +3,15 @@ import Nav from "./components/todo/navFor";
 import ToDo from "./components/todo/todo.js";
 import "./components/todo/todo.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Settings from "./context/settings";
 
 export default function App() {
   return (
     <>
-      <Nav />
-      <ToDo />
+      <Settings>
+        <Nav />
+        <ToDo />
+      </Settings>
     </>
   );
 }
