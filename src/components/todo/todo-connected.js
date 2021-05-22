@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import TodoForm from "./form.js";
 import TodoList from "./list.js";
 import useAjax from "../hooks/ajax";
+import ACL from "./acl";
 
 const todoAPI = "https://api-js401.herokuapp.com/api/v1/todo";
 
@@ -22,9 +23,11 @@ const ToDoC = () => {
         <h2>There are {list.filter((item) => !item.complete).length} Items To Complete</h2>
       </header>
       <section className="todo">
-        <div className="formAdd">
-          <TodoForm handleSubmit={postItem} />
-        </div>
+        <ACL capability="create">
+          <div className="formAdd">
+            <TodoForm handleSubmit={postItem} />
+          </div>
+        </ACL>
 
         <div>
           <TodoList list={list} handleComplete={putItem} handleDelete={deleteItem} />

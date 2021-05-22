@@ -1,21 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import useForm from "../hooks/form";
 import Form from "react-bootstrap/Form";
+import { LoginContext } from "../../context/auth";
 
 function TodoForm(props) {
   const [inputChange, formHandleSubmit] = useForm(props.handleSubmit);
-
-  // const handleInputChange = (e) => {
-  //   setItem({ ...item, [e.target.name]: e.target.value });
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   e.target.reset();
-  //   props.handleSubmit(item);
-  //   setItem(item);
-  // };
+  const userContext = useContext(LoginContext);
 
   return (
     <>
