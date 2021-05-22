@@ -97,6 +97,7 @@ header {
 }
 .badgeN {
   width: 180px;
+  cursor: pointer;
 }
 .toast-header strong {
   padding: 5px 20px;
@@ -118,6 +119,13 @@ header {
 }
 input {
   border-radius: 4px;
+  border-width: 1px;
   outline: none;
   padding-left: 10px;
+}
+.main-bar {
+  margin-right: 50px;
+}
+.close {
+  display: none;
 }
